@@ -57,7 +57,7 @@ Abra el *Hyperledger Composer Playground* [https://composer-playground.mybluemix
 #####3.2.- Crear nuestra red de negocio
 Vamos a crear nuestra propia red. Una red de negocios tiene varias propiedades, como un nombre y una descripción opcional. De clic en **Deploy a new business network**.
 
-![imagen:ComposerPáginaInicial](../imagenes/hpl/composer-inicial.jpg)
+![imagen:ComposerPáginaInicial](../imagenes/hpl/composer-inicial.JPG)
 
 Démosle el nombre *red-tutorial*. Opcionalmente podemos agregar una descripción.  También podemos agregar la cuenta del administrador, por ejemplo admin@red-tutorial*.
 
