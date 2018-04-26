@@ -63,13 +63,13 @@ Démosle el nombre *red-tutorial*. Opcionalmente podemos agregar una descripció
 
 Podemos elegir a partir de qué red ya desplegada podemos crear la nuestra.  En este caso, no queremos de ninguna y damos clic en **empty-business-network** y después en **Deploy**.
 
-![imagen:ComposerDespliegaNuevaRed](../imagenes/hpl/composer-desplieganuev.jpg)
+![imagen:ComposerDespliegaNuevaRed](../imagenes/hpl/composer-desplieganuev.JPG)
 
 #####3.3.- Conexión a la red
 
 Ahora debemos conectarnos a la red de negocios que acabamos de desplegar. Veremos una nueva tarjeta de red llamada `red-tutorial` con un identificador de usuario `admin.`
 
-![imagen:ComposerRecienCreada](../imagenes/hpl/ComposerRecienCreada.jpg)
+![imagen:ComposerRecienCreada](../imagenes/hpl/ComposerRecienCreada.JPG)
 
 En el Composer Playground a través de Web, las redes están representadas por **Tarjetas de identificación** (*ID cards*).  Estas tarjetas tienen todos los elementos necesarios (detalles de conexión, credenciales de autenticación y metadata) para conectarnos a la red correspondiente, ya sea la de este tutorial o una blockchain externo. Dar clic en **Connect now ->**.
 
