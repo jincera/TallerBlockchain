@@ -59,11 +59,11 @@ Vamos a crear nuestra propia red. Una red de negocios tiene varias propiedades, 
 
 ![imagen:ComposerPáginaInicial](../imagenes/hpl/composer-inicial.JPG)
 
-Démosle el nombre *red-tutorial*. Opcionalmente podemos agregar una descripción.  También podemos agregar la cuenta del administrador, por ejemplo admin@red-tutorial*.
+Démosle el nombre *red-tutorial*. Opcionalmente podemos agregar una descripción.  También podemos agregar la cuenta del administrador, por ejemplo *admin@red-tutorial*.
 
 Podemos elegir a partir de qué red ya desplegada podemos crear la nuestra.  En este caso, no queremos de ninguna y damos clic en **empty-business-network** y después en **Deploy**.
 
-![imagen:ComposerDespliegaNuevaRed](../imagenes/hpl/composer-desplieganuev.JPG)
+![imagen:ComposerDespliegaNuevaRed](../imagenes/hpl/composer-desplieganueva.JPG)
 
 ##### 3.3.- Conexión a la red
 
