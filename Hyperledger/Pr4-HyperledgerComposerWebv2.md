@@ -20,9 +20,9 @@ La práctica está inspirada en el siguiente tutorial de Hyperledger: [https://h
 ](https://hyperledger.github.io/composer/tutorials/playground-tutorial.html
 )
 
-#### Algunas definiciones
+### Algunas definiciones
 Los objetos que se manejan en el lenguaje de modelado son:
-##### Activos
+#### Activos
 Un activo es **cualquier cosa** que tenga un valor percibido y que pueda ser intercambiado entre los participantes en un acuerdo de negocio.
 Ejemplos de activos son: 
 - monedas, 
@@ -31,13 +31,13 @@ Ejemplos de activos son:
 - un embarque de plátanos, 
 - un contrato para un embarque a determinado precio si las condiciones se cumplen.
 
-##### Participantes
+#### Participantes
 Un *participante* es un miembro de la red de negocio. 
 
-##### Control de acceso
+#### Control de acceso
 En una red de negocio no todos los participantes tienen acceso a todo. El *control de acceso* establece quién tiene acceso a qué.
 
-##### Transacciones
+#### Transacciones
 Definimos transacción, como las interacciones sobre un activo que pudieran modificar el estado del blockchain.  Ejemplos de transacciones son:
 - Un sensor hace y registra una lectura de temperatura
 - Un participante vende una casa
