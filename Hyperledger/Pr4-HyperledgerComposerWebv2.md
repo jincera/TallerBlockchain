@@ -50,11 +50,11 @@ Las transacciones son las reglas de negocio (es decir, los *Smart Contracts*) de
 
 Vamos a diseñar una red de negocio en la que definiremos activos, participantes y transacciones sujetas a reglas de negocio. El ambiente es proporcionado por IBM Bluemix
 
-#####3.1.- Abrir el Playground del Composer en web
+##### 3.1.- Abrir el Playground del Composer en web
 
 Abra el *Hyperledger Composer Playground* [https://composer-playground.mybluemix.net/](https://composer-playground.mybluemix.net/).  Tras la página de bienvenida, veremos la página *My Business Networks* con un resumen de las redes a las que nos podemos conectar y las entidades que podemos usar.
 
-#####3.2.- Crear nuestra red de negocio
+##### 3.2.- Crear nuestra red de negocio
 Vamos a crear nuestra propia red. Una red de negocios tiene varias propiedades, como un nombre y una descripción opcional. De clic en **Deploy a new business network**.
 
 ![imagen:ComposerPáginaInicial](../imagenes/hpl/composer-inicial.JPG)
@@ -65,7 +65,7 @@ Podemos elegir a partir de qué red ya desplegada podemos crear la nuestra.  En 
 
 ![imagen:ComposerDespliegaNuevaRed](../imagenes/hpl/composer-desplieganuev.JPG)
 
-#####3.3.- Conexión a la red
+##### 3.3.- Conexión a la red
 
 Ahora debemos conectarnos a la red de negocios que acabamos de desplegar. Veremos una nueva tarjeta de red llamada `red-tutorial` con un identificador de usuario `admin.`
 
@@ -73,7 +73,7 @@ Ahora debemos conectarnos a la red de negocios que acabamos de desplegar. Veremo
 
 En el Composer Playground a través de Web, las redes están representadas por **Tarjetas de identificación** (*ID cards*).  Estas tarjetas tienen todos los elementos necesarios (detalles de conexión, credenciales de autenticación y metadata) para conectarnos a la red correspondiente, ya sea la de este tutorial o una blockchain externo. Dar clic en **Connect now ->**.
 
-#####3.4.- Agregar un archivo de modelo
+##### 3.4.- Agregar un archivo de modelo
 
 Como puede observar, estamos en el tab `Define,` que es donde se crean y editan los archivos para definir la red de negocios.
 
@@ -108,7 +108,7 @@ En este modelo se definió un solo activo de tipo `Casa,` un solo participante d
 
 **Observe que abajo de la ventana se está validando el código en tiempo real**.
 
-#####3.5.- Agregar un procesador de transacción desde un archivo.
+##### 3.5.- Agregar un procesador de transacción desde un archivo.
 
 Ahora podemos definir la lógica de negocio para las transacciones en nuestra red. En `Composer` esta lógica de negocio se expresa como funciones `javaScript.`  Estas funciones se ejecutan automáticamente cuando se somete una transación para su procesamiento.
 
@@ -131,13 +131,13 @@ function transfiereCasa(vende) {
 ```
 Esta función simplemente cambia el *propietario* de una casa con la recepción de una transacción *Vende*, toma la *Casa* y la regresa modificada al *assetRegistry* utilizado para almacenar instancias de  *Casa*.
 
-#####3.6.- Control de acceso
+##### 3.6.- Control de acceso
 
 Los archivos de control de acceso definen las reglas para acceder a las redes de negocio.  Como nuestra red es muy simple, no necesitamos editar el archivo de control de acceso que se crea por default. Este archivo le da al participante actual `networkAdmin` acceso total a la red de negocio y a las operaciones a nivel *Sistema*.
 
 Una red de negocio puede tener varios archivos `model` o `script`, pero solamente puede tener un archivo de control de acceso.
 
-#####3.7.- Desplegar y probar la red de negocio
+##### 3.7.- Desplegar y probar la red de negocio
 
 Ya que han sido creados los tres archivos (`model` `script` y `access control`), debemos desplegar y probar nuestra red de negocio. Simplemente de clic en el botón **Deploy changes**.
 
