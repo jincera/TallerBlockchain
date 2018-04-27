@@ -202,7 +202,7 @@ Ahora es el turno de probar nuestra transacción `Vende.`  Las transacciones son
 
 ```js
 {
-  "$class": "org.acme.mired.Venta",
+  "$class": "org.acme.mired.Vende",
   "casa": "resource:org.acme.mired.Casa#ABC",
   "nuevoPropietario": "resource:org.acme.mired.Negociante#NEGOC2"
 }
