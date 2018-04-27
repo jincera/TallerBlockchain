@@ -157,8 +157,8 @@ Aparece la estructura de un *Negociante*. Modifíquela para que quede de la sigu
     {
       "$class": "org.acme.mired.Negociante",
       "idNegociante": "NEGOC1",
-      "firstName": "Luis",
-      "lastName": "Garcia"
+      "Nombre": "Luis",
+      "Apellido": "Garcia"
     }
 ```
 
@@ -187,9 +187,10 @@ De clic en **ASSETS/Casa** y modifique la plantilla que aparece para que quede c
   "idCasa": "ABC",
   "descripcion": "Casa de prueba",
   "mainExchange": "Euronext",
-  "quantity": 1,
-  "owner": "resource:org.acme.mired.Negociante#NEGOC1"
-    }
+  "cantidad": 1,
+  "propietario": "resource:org.acme.mired.Negociante#NEGOC1"
+}
+
 ```
 De clic en **Create New**; deberá ver el activo creado en la pantalla:
 
