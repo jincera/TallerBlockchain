@@ -13,7 +13,7 @@ En esta práctica seguiremos los pasos para desplegar el modelo de una red de ne
 
 Se dejarán los detalles de Hyperledger Fabric para otra práctica; en ésta nos seguiremos familiarizando con Composer y su lenguaje de modelado (CTO) con una red de negocio un poco más compleja en la que se controla una cadena de suminstros de productos perecederos (Plátano, Pera y Café).
 
-Los socios de negocio (los participantes) son productores, importadores (o compradores) y transportistas.  Los acuerdos entre las partes estipula las condiciones (las reglas de negocio) en que operarán.  Específicamente, las reglas de negocio establecerán bajo qué condiciones se harán pagos por importar los productos predederos.
+Los socios de negocio (los participantes) son productores, importadores (o compradores) y transportistas.  Los acuerdos entre las partes estipulan las condiciones (las reglas de negocio) en que operarán.  Específicamente, las reglas de negocio establecerán bajo qué condiciones se harán pagos por importar los productos perecederos.
 
 La práctica está inspirada en las siguientes referencias:
 - [https://hyperledger.github.io/composer/installing/development-tools.html
@@ -23,18 +23,16 @@ La práctica está inspirada en las siguientes referencias:
 ](https://www.ibm.com/developerworks/cloud/library/cl-model-test-your-blockchain-network-with-hyperledger-composer-playground/index.html)
 
 En este tutorial vamos a instalar Hyperledger Composer en modo local. 
-Composer todavía no es soportado en Windows, así que utilizaremos una máquina virtual con Ubuntu.  El Playground se ejecuta en un contender Docker.  
+Composer todavía no es soportado en Windows, así que utilizaremos una máquina virtual con Ubuntu.  El Playground se ejecuta en un contenedor Docker.  
 
-Si no lo ha hecho ya, instale las herramientas. El apéndice contiene la guía de instalación. **Nota. En el laboratorio ya se tienen las herramientas instaladas**.
+Si no lo ha hecho ya, instale las herramientas. El apéndice contiene la guía de instalación. 
+**Nota. En el laboratorio ya se tienen las herramientas instaladas**.
 
 ### 3. Desarrollo
 
-Puede encontrar todo este proyecto como una de las redes de negocio en Bluemix, donde creamos nuestra red en la práctica anterior.  En este tutorial trataremos de hacerla paso a paso para conocer un poco más cómo definir una red de negocios en el lenguaje de modelado CTO.
+Puede encontrar todo este proyecto como una de las redes de negocio en IBM Cloud, donde creamos nuestra red en la práctica anterior.  En este tutorial trataremos de hacerla paso a paso para conocer un poco más cómo definir una red de negocios en el lenguaje de modelado CTO.
 
-Antes de ejecutar el Hyperledger Composer en modo local con toda la infrestructura de Hyperledger Fabric, vamos a seguir trabajando en modo navegador.
-
-
-##### 3.1.- Composer local a través de un navegador
+#### 3.1.- Composer local a través de un navegador
 Una vez que tiene instalado todo, ejecute localmente el Playground. Se desplegará una página web con la interfaz de usuario, esperando comandos en el puerto 8080
 
 ```bash
@@ -86,7 +84,7 @@ asset Embarque identified by idEmbarque {
   --> Contract contrato
 }
 ```
-Las propiedades de un activo se indican con la letra 'o' minúscula. Las propiedades pueden tener un tipo fundamental, como String o uno enumerado, cmo TipoProducto, o una transacción como el arreglo LecturasTemperatura.
+Las propiedades de un activo se indican con la letra 'o' minúscula. Las propiedades pueden tener un tipo fundamental, como String o uno enumerado, como TipoProducto, o una transacción como el arreglo LecturasTemperatura.
 
 La referencia a `Contract` indicada por el símbolo '-->' es una *relationship* y es unidireccional.
 
@@ -124,13 +122,13 @@ concept Direccion {
 }
 ```
 
-##### 3.2.- Modelando la red de negocio
+#### 3.2.- Modelando la red de negocio
 
 **Borrar la memoria del host local**
 
 Cuando estamos trabajando con el Playground en modo navegador, Composer permite trabajar solamente con un modelo a la vez.  Si tenemos otro modelo, tendrá que eliminarse de la memoria local. En condiciones normales Playground removerá el modelo anterior, pero si cometemos errores, conviene empezar desde cero borrando manualmente la memoria local. 
 
-Esto varía de según el navegador.  Para Chrome se accede a: 
+Esto varía según el navegador.  Para Chrome se accede a: 
 
 ```bsh
 Settings > Advanced > Content Settings > Cookies >All cookies and site data > localhost  
@@ -143,7 +141,7 @@ De clic en `Deploy a new business network.` La plantilla de perecederos ya exist
 
 En la tarjeta *Admin* de clic en la liga `Connect now.` Si todo está bien, deberá ver una figura como la siguiente: 
 
-![imagen:Red de bienes perecederos](../imagenes/hpl/redperecederos.JPG)
+![imagen:Red de bienes perecederos](../imagenes/hpl/redPerecederos.JPG)
 *Fig. 2.- Pantalla de definición de la red de perecederos*
 
 Como ya sabemos, el archivo `models/perishable.cto` tiene el modelo de la red y el que está debajo de scripts, `lib/logic.js` tiene los smart contracts que implementan la lógica de negocio.
@@ -197,15 +195,16 @@ Para acelerar nuestra interacción con este ejercicio, el ejemplo tiene una func
 
 Para executar esta función, damos clic en **Submit Transaction**; en la ventana de diálogo que aparece seleccionamos `*SetupDemo*:
 
-![imagen:Red Perecederos. Setup](../imagenes/hpl/redperSetupTx.JPG)
+![imagen:Red Perecederos. Setup](../imagenes/hpl/redPerSetupTx.JPG)
 *Fig. 4.- Diálogo para enviar una transacción*
 
-Seleccione **Grower** en el panel de PARTICIPANTS en el menú de la izquierda. Verá que ya está instanciado con ciertos valores.  SetupDemo() hizo lo mismo con todos los demás objetos en el modelo.
+Seleccione **Grower** en el panel de PARTICIPANTS en el menú de la izquierda. Verá que ya está instanciado con ciertos valores. En particular, compruebe que el balance de su cuenta (*account balance*) está en cero.  
+SetupDemo() también instanció todos los demás objetos en el modelo.
 
 ![imagen:Red Perecederos. Grower](../imagenes/hpl/redperGrower.JPG)
 *Fig. 5.- Se verifica que el participante ya ha sido instanciado*
 
-#####3.3.- Transacciones
+#### 3.3.- Transacciones
 Hasta ahora hemos hablado de activos y participantes. Es momento de trabajar con las transacciones.
 
 La lógica de negocio en el smart contract (o **chaincode** en Hyperledger) generada en `setupDemo(),` estipula las siguientes condiciones:
@@ -213,7 +212,7 @@ La lógica de negocio en el smart contract (o **chaincode** en Hyperledger) gene
 1. La temperatura dentro del contenedor debe ser de 6 grados celsius todo el tiempo.  Si la temperatura está por debajo de un rango acordado (+/- -5 grados), entonces el precio del embarque, que originalmente era de $0.5 por unidad se reduce $0.2 por cada grado debajo de la temperatura mínima y $0.1 por cada grado que rebase esa tempreatura.
 2. Si el embarque llega tarde, el contenido es gratuito.
 
-#####3.4.- Control de acceso
+#### 3.4.- Control de acceso
 Las reglas de control de acceso se estipulan en el archivo `permissions.acl.` En otro tutorial se trabajará con ellas.  Por ahora, simplemente familiarícese con el archivo. Se encuentra en la pestaña **Define** del modelo.
 ```js
 
@@ -238,7 +237,7 @@ rule SystemACL {
 ```
 Podrá ver que por ahora no sirven de gran cosa: Otorga permisos de todo a todos.  Más adelante pondremos algunas restricciones.
 
-#####3.5.- Probar el modelo
+#### 3.5.- Probar el modelo
 
 Ya que el modelo está instanciado, podemos lanzar algunas operaciones sobre él. Esto ejecutará el código JavaScript del smart contract.  Veamos un segmento del contrato:
 
@@ -286,7 +285,7 @@ cmd> ls developerWorks
 
 Muy bien. Si revisa el contenido de la carpeta `developerWorks,` encontrará el código de varios proyectos. El que nos interesa es `perishable-networks.`
 
-##### 4.1 Modificar la definición de la red
+#### 4.1 Modificar la definición de la red
 
 Empecemos por agregar el sensor GPS. Con el editor de su preferencia (si no ha instalado ninguno, utilice `gedit`) abra el archivo `perishable.cto` que se encuentra en la carpeta **developerWorks/perishable-network/models**.
 
@@ -349,7 +348,7 @@ event ShipmentInPortEvent {
 }
 ```
 
-##### 4.2 Agregar *chaincode*
+#### 4.2 Agregar *chaincode*
 Hasta ahora hemos modelado el sensor GPS y la transacción que permitirá agregar las lecturas a blockchain. Para que esto ocurra, es necesario escribir el código de la transacción (el smart contract).  Como recordará, en Composer esto se hace escribiendo una rutina JavaScript (en el archivo `lib/logic.js`) que se ocupe de registrar la lectura en blockchain. Abra el archivo, tendrá que hacerle varias modificaciones.
 
 En primer lugar, se debe modificar la función `temperatureReading` para que se dispare un evento (`TemperatureThresholdEvent` en el código) cuando se excedan los umbrales contratados.  En el siguiente segmento de código se resaltan las líneas que deben agregarse a la función:
@@ -437,7 +436,7 @@ Como se mencionó en la introducción, el despliegue de nuestra red de negocio e
 
 El archivo que se envía a la nube es un *Business Network Archive (BNA)* que se crea al hacer un build del proyecto. Este archivo se importará desde el Playground.  Para poder crear este archivo, debemos hacer todavía algunos cambios a nuestro código.
 
-##### 5.1 Modificar chaincode para desplegar mensajes
+#### 5.1 Modificar chaincode para desplegar mensajes
 
 En las funciones `temperatureReading` y `gpsReading` en el archivo `lib/logic.js,` se debe incluir una línea para desplegar el mensaje del evento en la consola.  Esto se hace en las dos funciones justo después de haber formado el mensaje.  En los siguientes fragmentos de código se muestra la línea que debe ser agregada en cada función:
 
@@ -464,7 +463,7 @@ En las funciones `temperatureReading` y `gpsReading` en el archivo `lib/logic.js
 ```
 Con estas modificaciones, cuando se ejecuten las transacciones `temperatureReading` y `gpsReading` y éstas generen eventos, se podrán ver en la consola de JavaScript.
 
-##### 5.2 Crear el archivo BNA
+#### 5.2 Crear el archivo BNA
 El `build` para generar el *Business Network Archive* se genera al ejecutar `npm install` en la línea de comandos. Desde una terminal colóquese en la carpeta `perishable-network` y lance el comando:
 
 ```bash
@@ -480,7 +479,7 @@ Creating Business Network Archive
 Command succeeded
 ```
 
-##### 5.3 Importar el modelo
+#### 5.3 Importar el modelo
 
 Vayamos al Playground en línea utilizado en la práctica anterior. Por si no lo recuerda, se encuentra en [https://composer-playground.mybluemix.net/](https://composer-playground.mybluemix.net/).  Al entrar, debemos encontrar la pantalla de bienvenida de la *Fig. 1*.
 
@@ -498,7 +497,7 @@ En la siguiente pantalla, de clic en `Drop here to upload or browse.`
 
  Se abrirá una ventana de diálogo; navegue hasta la carpeta `perishable-network/dist` y localice el archivo `perishable-network.bna.` De clic en **Open**. Una vez cargada, de clic en **Deploy** para desplegar el modelo.
 
-##### 5.4 Interactuando con el modelo
+#### 5.4 Interactuando con el modelo
 Esta parte ya debe resultarle familiar pues es lo que hicimos en la primera parte de esta práctica. De clic en **Connect now** para iniciar.
 
 Recuerde que empezamos por instanciar entidades en el modelo con ayuda de la transacción `SetupDemo.` Invóquela desde el menú `Test/Submit Transaction.`
