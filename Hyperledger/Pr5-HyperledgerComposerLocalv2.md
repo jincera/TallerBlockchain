@@ -41,7 +41,7 @@ Una vez que tiene instalado todo, ejecute localmente el Playground. Se desplegar
 cmd> composer-playground
 ```
 
-![imagen:El composer en modo local](../imagenes/hpl/ComposerLocal.jpg)
+![imagen:El composer en modo local](../imagenes/hpl/ComposerLocal.JPG)
 *Fig. 1.- Página de bienvenida del Hyperledger Composer en línea*
 
 El modelo de nuestra red de negocios se especifica con el lenguaje de modelado y se almacena en un archivo `.cto`  Tiene definiciones para: 
@@ -143,7 +143,7 @@ De clic en `Deploy a new business network.` La plantilla de perecederos ya exist
 
 En la tarjeta *Admin* de clic en la liga `Connect now.` Si todo está bien, deberá ver una figura como la siguiente: 
 
-![imagen:Red de bienes perecederos](../imagenes/hpl/redperecederos.jpg)
+![imagen:Red de bienes perecederos](../imagenes/hpl/redperecederos.JPG)
 *Fig. 2.- Pantalla de definición de la red de perecederos*
 
 Como ya sabemos, el archivo `models/perishable.cto` tiene el modelo de la red y el que está debajo de scripts, `lib/logic.js` tiene los smart contracts que implementan la lógica de negocio.
@@ -188,7 +188,7 @@ asset Contract identified by contractId {
 Siéntase en libertad de analizar el código tanto en perishable.cto como en el de la lógica de negocio.
 Cuando lo desee, instancíe el model dando clic en `Test` para empezar a jugar con la red.
 
-![imagen:Red perecederos. Lab de prueba](../imagenes/hpl/redperInicio.jpg)
+![imagen:Red perecederos. Lab de prueba](../imagenes/hpl/redperInicio.JPG)
 *Fig. 3.- Pantalla para interactuar con la red de negocio*
 
 Vemos los activos y los participantes del lado izquierdo, pero no hay nada en el centro pues todavía no se han creado instancias de ellos.
@@ -197,12 +197,12 @@ Para acelerar nuestra interacción con este ejercicio, el ejemplo tiene una func
 
 Para executar esta función, damos clic en **Submit Transaction**; en la ventana de diálogo que aparece seleccionamos `*SetupDemo*:
 
-![imagen:Red Perecederos. Setup](../imagenes/hpl/redperSetupTx.jpg)
+![imagen:Red Perecederos. Setup](../imagenes/hpl/redperSetupTx.JPG)
 *Fig. 4.- Diálogo para enviar una transacción*
 
 Seleccione **Grower** en el panel de PARTICIPANTS en el menú de la izquierda. Verá que ya está instanciado con ciertos valores.  SetupDemo() hizo lo mismo con todos los demás objetos en el modelo.
 
-![imagen:Red Perecederos. Grower](../imagenes/hpl/redperGrower.jpg)
+![imagen:Red Perecederos. Grower](../imagenes/hpl/redperGrower.JPG)
 *Fig. 5.- Se verifica que el participante ya ha sido instanciado*
 
 #####3.3.- Transacciones
@@ -242,7 +242,7 @@ Podrá ver que por ahora no sirven de gran cosa: Otorga permisos de todo a todos
 
 Ya que el modelo está instanciado, podemos lanzar algunas operaciones sobre él. Esto ejecutará el código JavaScript del smart contract.  Veamos un segmento del contrato:
 
-![imagen:Red Perecederos. Contrato](../imagenes/hpl/redpercontract.jpg)
+![imagen:Red Perecederos. Contrato](../imagenes/hpl/redpercontract.JPG)
 *Fig. 6.- Un segmento del smart contract*
 
 Vamos a simular el siguiente escenario:
@@ -325,7 +325,7 @@ Además de longitud y latitud, una lectura de GPS proporciona fecha y hora.
 
 Para que la transacción se pueda almacenar en el blockchain, su información *debe ser parte de un Activo*. Dado que la lectura del sensor GPS puede considerarse parte de un embarque, es natural agregar estas lecturas al `Activo Embarque` tal y como se hizo para las lecturas de temperatura.  Agregue la línea 7 resaltada en la figura, a su código:
 
-![imagen:GPS-Asset-Shipment](../imagenes/hpl/GpsAssetShipment.jpg)
+![imagen:GPS-Asset-Shipment](../imagenes/hpl/GpsAssetShipment.JPG)
 *Fig. 7.- Segmento del código `Asset Shipment` que debe ser modificado
 
 Finalmente, **agregue dos nuevos eventos** al modelo, uno cuando el umbral de temperatura ha rebasado la tolerancia acordada en el contrato, y el otro cuando el barco ha llegado al puerto destino.
@@ -488,12 +488,12 @@ Recuerde que si no ve la pantalla de bienvenida, debe limpiar la memoria del nav
 
 Como en la práctica anterior, de clic en **Deploy a new business network** para crear una nueva red.
 
-![imagen:ComposerPáginaInicial](../imagenes/hpl/composer-inicial.jpg)
+![imagen:ComposerPáginaInicial](../imagenes/hpl/composer-inicial.JPG)
 *Fig. 8.- Página inicial para desplegar una nueva red o seleccionar una ya creada*
 
 En la siguiente pantalla, de clic en `Drop here to upload or browse.`
 
-![imagen:ComposerPáginaInicial](../imagenes/hpl/composerDropHere.jpg)
+![imagen:ComposerPáginaInicial](../imagenes/hpl/composerDropHere.JPG)
 *Fig. 9.- Seleccionar una red de negocio o cargar (importar) una nueva*
 
  Se abrirá una ventana de diálogo; navegue hasta la carpeta `perishable-network/dist` y localice el archivo `perishable-network.bna.` De clic en **Open**. Una vez cargada, de clic en **Deploy** para desplegar el modelo.
@@ -507,7 +507,7 @@ Ahora abra la consola `JavaScript.`  En Chrome, seleccione `View > Developer > J
 
 Envíe una transacción `TemperatureReading` para el embarque `SHIP_001` con un valor de 12 grados centígrados. 
 
-![imagen:ComposerTemperaturaEnExceso](../imagenes/hpl/temperaturaExcede.jpg)
+![imagen:ComposerTemperaturaEnExceso](../imagenes/hpl/temperaturaExcede.JPG)
 *Fig. 9.- Transacción con valor de temperatura fuera de umbrales*
 
 Este valor excede las condiciones contractuales, por lo que se dispara un evento. En la consola de JavaScript (o del navegador en Firefox) verá el siguiente mensaje: *Temperature threshold violated! Emitting TemperatureEvent for shipment: SHIP_001*. 
