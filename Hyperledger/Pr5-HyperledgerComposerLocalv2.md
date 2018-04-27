@@ -142,6 +142,7 @@ De clic en `Deploy a new business network.` La plantilla de perecederos ya exist
 En la tarjeta *Admin* de clic en la liga `Connect now.` Si todo está bien, deberá ver una figura como la siguiente: 
 
 ![imagen:Red de bienes perecederos](../imagenes/hpl/redPerecederos.JPG)
+
 *Fig. 2.- Pantalla de definición de la red de perecederos*
 
 Como ya sabemos, el archivo `models/perishable.cto` tiene el modelo de la red y el que está debajo de scripts, `lib/logic.js` tiene los smart contracts que implementan la lógica de negocio.
@@ -187,6 +188,7 @@ Siéntase en libertad de analizar el código tanto en perishable.cto como en el 
 Cuando lo desee, instancíe el model dando clic en `Test` para empezar a jugar con la red.
 
 ![imagen:Red perecederos. Lab de prueba](../imagenes/hpl/redperInicio.JPG)
+
 *Fig. 3.- Pantalla para interactuar con la red de negocio*
 
 Vemos los activos y los participantes del lado izquierdo, pero no hay nada en el centro pues todavía no se han creado instancias de ellos.
@@ -202,6 +204,7 @@ Seleccione **Grower** en el panel de PARTICIPANTS en el menú de la izquierda. V
 SetupDemo() también instanció todos los demás objetos en el modelo.
 
 ![imagen:Red Perecederos. Grower](../imagenes/hpl/redperGrower.JPG)
+
 *Fig. 5.- Se verifica que el participante ya ha sido instanciado*
 
 #### 3.3.- Transacciones
