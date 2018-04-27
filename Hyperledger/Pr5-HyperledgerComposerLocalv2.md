@@ -29,7 +29,7 @@ Si no lo ha hecho ya, instale las herramientas. El apéndice contiene la guía d
 **Nota. En el laboratorio ya se tienen las herramientas instaladas**.
 
 ### 3. Desarrollo
-
+F
 Puede encontrar todo este proyecto como una de las redes de negocio en IBM Cloud, donde creamos nuestra red en la práctica anterior.  En este tutorial trataremos de hacerla paso a paso para conocer un poco más cómo definir una red de negocios en el lenguaje de modelado CTO.
 
 #### 3.1.- Composer local a través de un navegador
@@ -40,6 +40,7 @@ cmd> composer-playground
 ```
 
 ![imagen:El composer en modo local](../imagenes/hpl/ComposerLocal.JPG)
+
 *Fig. 1.- Página de bienvenida del Hyperledger Composer en línea*
 
 El modelo de nuestra red de negocios se especifica con el lenguaje de modelado y se almacena en un archivo `.cto`  Tiene definiciones para: 
@@ -198,6 +199,7 @@ Para acelerar nuestra interacción con este ejercicio, el ejemplo tiene una func
 Para executar esta función, damos clic en **Submit Transaction**; en la ventana de diálogo que aparece seleccionamos `*SetupDemo*:
 
 ![imagen:Red Perecederos. Setup](../imagenes/hpl/redPerSetupTx.JPG)
+
 *Fig. 4.- Diálogo para enviar una transacción*
 
 Seleccione **Grower** en el panel de PARTICIPANTS en el menú de la izquierda. Verá que ya está instanciado con ciertos valores. En particular, compruebe que el balance de su cuenta (*account balance*) está en cero.  
@@ -245,6 +247,7 @@ Podrá ver que por ahora no sirven de gran cosa: Otorga permisos de todo a todos
 Ya que el modelo está instanciado, podemos lanzar algunas operaciones sobre él. Esto ejecutará el código JavaScript del smart contract.  Veamos un segmento del contrato:
 
 ![imagen:Red Perecederos. Contrato](../imagenes/hpl/redpercontract.JPG)
+
 *Fig. 6.- Un segmento del smart contract*
 
 Vamos a simular el siguiente escenario:
@@ -328,6 +331,7 @@ Además de longitud y latitud, una lectura de GPS proporciona fecha y hora.
 Para que la transacción se pueda almacenar en el blockchain, su información *debe ser parte de un Activo*. Dado que la lectura del sensor GPS puede considerarse parte de un embarque, es natural agregar estas lecturas al `Activo Embarque` tal y como se hizo para las lecturas de temperatura.  Agregue la línea 7 resaltada en la figura, a su código:
 
 ![imagen:GPS-Asset-Shipment](../imagenes/hpl/GpsAssetShipment.JPG)
+
 *Fig. 7.- Segmento del código `Asset Shipment` que debe ser modificado
 
 Finalmente, **agregue dos nuevos eventos** al modelo, uno cuando el umbral de temperatura ha rebasado la tolerancia acordada en el contrato, y el otro cuando el barco ha llegado al puerto destino.
@@ -491,11 +495,13 @@ Recuerde que si no ve la pantalla de bienvenida, debe limpiar la memoria del nav
 Como en la práctica anterior, de clic en **Deploy a new business network** para crear una nueva red.
 
 ![imagen:ComposerPáginaInicial](../imagenes/hpl/composer-inicial.JPG)
+
 *Fig. 8.- Página inicial para desplegar una nueva red o seleccionar una ya creada*
 
 En la siguiente pantalla, de clic en `Drop here to upload or browse.`
 
 ![imagen:ComposerPáginaInicial](../imagenes/hpl/composerDropHere.JPG)
+
 *Fig. 9.- Seleccionar una red de negocio o cargar (importar) una nueva*
 
  Se abrirá una ventana de diálogo; navegue hasta la carpeta `perishable-network/dist` y localice el archivo `perishable-network.bna.` De clic en **Open**. Una vez cargada, de clic en **Deploy** para desplegar el modelo.
@@ -510,7 +516,8 @@ Ahora abra la consola `JavaScript.`  En Chrome, seleccione `View > Developer > J
 Envíe una transacción `TemperatureReading` para el embarque `SHIP_001` con un valor de 12 grados centígrados. 
 
 ![imagen:ComposerTemperaturaEnExceso](../imagenes/hpl/temperaturaExcede.JPG)
-*Fig. 9.- Transacción con valor de temperatura fuera de umbrales*
+
+*Fig. 10.- Transacción con valor de temperatura fuera de umbrales*
 
 Este valor excede las condiciones contractuales, por lo que se dispara un evento. En la consola de JavaScript (o del navegador en Firefox) verá el siguiente mensaje: *Temperature threshold violated! Emitting TemperatureEvent for shipment: SHIP_001*. 
 
