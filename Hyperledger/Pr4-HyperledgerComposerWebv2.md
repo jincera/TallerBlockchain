@@ -145,7 +145,7 @@ Para probar nuestra red vamos a crear algunos participantes (los "Negociantes"),
 
 Para empezar, de clic en **Test**. Aparece una pantalla como la siguiente:
 
-![imagen:Composer Inicia Test](../imagenes/hpl/ComposerIniciaTest.jpg)
+![imagen:Composer Inicia Test](../imagenes/hpl/ComposerIniciaTest.JPG)
 
 **3.7.1.- Crear participantes**
 
@@ -193,7 +193,7 @@ De clic en **ASSETS/Casa** y modifique la plantilla que aparece para que quede c
 ```
 De clic en **Create New**; deberá ver el activo creado en la pantalla:
 
-![imagen:Composer Crea Activo](../imagenes/hpl/ComposerCreaActivo.jpg)
+![imagen:Composer Crea Activo](../imagenes/hpl/ComposerCreaActivo.JPG)
 
 **3.7.3.- Transferir el activo**
 
@@ -213,7 +213,7 @@ De clic en **Submit**. Si todo está correcto, debió ver una ventana temporal i
 
 Para verificar que la regla de negocio se ha cumplido, cheque quién es el (nuevo) propietario de la Casa "ABC".  De clic en **ASSETS/Casa** y expanda la sección de datos.  Deberá ver que el dueño es NEGOC2:
 
-![imagen:Composer Nuevo Propietario](../imagenes/hpl/ComposerNvoDuenio.jpg)
+![imagen:Composer Nuevo Propietario](../imagenes/hpl/ComposerNvoDuenio.JPG)
 
 En la pestaña `TRANSACTIONS/All Transactions` podemos ver la historia de las transacciones que se han ejecutado.  Podrá notar que aún el registro de Negociantes y de Activos aparecen como una transacción.  Efectivamente, se trata de **Transacciones de Sistema**. Estas son comunes a todas las redes de negocio y se definen en el Composer en tiempo de ejecución.
 
