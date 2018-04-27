@@ -169,8 +169,8 @@ Necesitamos un segundo participante. Lo crearemos igual pero en esta ocasión el
     {
       "$class": "org.acme.mired.Negociante",
       "idNegociante": "NEGOC2",
-      "firstName": "Rita",
-      "lastName": "Ortega"
+      "Nombre": "Rita",
+      "Apellido": "Ortega"
     }
 ```
 Asegúrese de que aparecen los dos participantes en la pantalla de `Negociante` antes de continuar.
