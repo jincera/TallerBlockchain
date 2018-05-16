@@ -1,819 +1,0 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-   <style type="text/css">
-   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
-   </style>
-   
-   
-</head>
-<body>
-    <h1>Práctica 3. Smart contracts en Ethereum. Introducción</h1>
-
-<p>José Incera. Marzo 2018</p>
-
-<h3>1.  Objetivo</h3>
-
-<p>Familiarizarse con los conceptos básicos de <em>smart contracts</em> en Ethereum en un ambiente de evaluación.</p>
-
-<h3>2. Introducción</h3>
-
-<p>Ethereum y su criptodivisa, <em>Ether</em>, es quizás el segundo blockchain más popular después de Bitcoin.  Sin embargo, la gran contribución de Ethereum no está en una nueva criptodivisa sino en la capacidad de su blockchain de soportar <strong>smart contracts</strong>.  Se trata de segmentos de código (como clases y funciones) que permiten definir las <em>reglas de negocio</em>, es decir, las condiciones en que se puede llevar a cabo una transacción.</p>
-
-<p>Con los smart contracts se pueden desplegar <strong>DApps</strong>, aplicaciones descentralizadas, las cuales se espera que generarán un verdadero efecto transformador de blockchain en la sociedad.</p>
-
-<p>En esta práctica se trabajará con un ambiente de desarrollo auto-contenido (un <em>sandbox</em>) implementado, entre otros, para validar smart contracts. Consiste de tres partes:</p>
-
-<ul>
-<li>En la primera simplemente se instala el ambiente y se intercambian tokens (criptodivisas)</li>
-<li>En la segunda aprenderemos cómo crear un smart contract que permita validar la existencia y la integridad de documentos</li>
-<li>En la tercera parte, basada en un tutorial de Ethereum, veremos cómo se despliega una interfaz de usuario (front-end) para ocultar los detalles del blockchain.</li>
-</ul>
-
-<p>La práctica está inspirada en las siguientes referencias:</p>
-
-<ul>
-<li><a href="https://blog.zeppelin.solutions/a-gentle-introduction-to-ethereum-programming-part-1-783cc7796094">A gentle introduction to Ethereum programming</a></li>
-<li><a href="https://blog.zeppelin.solutions/the-hitchhikers-guide-to-smart-contracts-in-ethereum-848f08001f0">The hitchhiker&#39;s guide to smart contracts in Ethereum</a></li>
-<li><a href="http://truffleframework.com/tutorials/pet-shop">Ethereum Pet Shop Tutorial</a></li>
-</ul>
-
-<h3>3. Herramientas</h3>
-
-<p>Para desarrollar DApps, se necesita un cliente para conectarse al blockchain.  Existen muchas alternativas compatibles con Ethereum.  La más popular para hacer pruebas de concepto, es <code>testrpc</code>, recientemente renombrada <code>ganache-cli</code>. Testrpc también simula una cadena de bloques.</p>
-
-<p>También se necesita un ambiente para compilar, desplegar y probar rápidamente smart contracts (es decir, un <em>IDE</em>).  La herramienta más popular para ello es <a href="http://truffleframework.com/">Truffle</a>.</p>
-
-<p>En el apéndice se muestra cómo instalar testrpc y Truffle para ambients Windows 7 y Windows 10. La instalación en Ubuntu es trivial. Si no lo ha hecho ya, vaya al apéndice e instale las herramientas.  <strong>En el laboratorio estas herramientas ya se encuentran instaladas</strong>.</p>
-
-<h3>4. Transferencias entre cuentas</h3>
-
-<p><strong>4.1.-</strong> Ejecutar <code>testrpc</code></p>
-
-<p>Lo primero que necesitamos, es una cadena de bloques. Ésta es proporcionada por testrpc.  Lance el comando <strong>en una ventana PowerShell</strong>; la ventana quedará ocupada por testrpc.  Al ejecutarlo, testrpc genera diez cuentas con fondos ficticios para poder hacer pruebas.  También queda esperando solicitudes <strong>en el puerto 8545 por omisión</strong> para agregar transacciones.</p>
-
-<p><em>Nota: En Linux, el comando es  <code>ganache-cli</code></em></p>
-
-<p><img src="../imagenes/eth/lanzatestrpc.jpg" alt="imagen:Lanza testrpc">
-<em>Fig. 2. Lanzamiento de testrpc</em></p>
-
-<p><strong>4.2.-</strong> Interacción entre cuentas</p>
-
-<p>En este primer ejercicio, vamos a realizar transferencias entre algunas de las cuentas creadas por testrcp.  Esta interacción se suele hacer con <code>web3</code>, una librería JavaScript que implementa JSON RPC para Ethereum.  Para no entrar a ese nivel de detalle, utilizaremos algunas funcionalidades de <code>Truffle</code>, que usan web3 internamente.</p>
-
-<p><strong>4.2.1.-</strong> Inicialización y configuración de Truffle
-En una ventana de PowerShell <strong>distinta a aquélla en la que se está ejecutando testrpc</strong>, cree un directorio <code>pruebasETH</code>, colóquese ahí y lance la inicialización de Truffle:</p>
-
-<pre><code class="bash">PS&gt; mkdir pruebasETH
-
-    Directorio: C:\CursoEthereum\
-
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
-d----      24/02/2018  07:12 p.m.            pruebasETH
-
-PS&gt; cd pruebasETH
-PS&gt; truffle init
-
-Downloading...
-Unpacking...
-...
-</code></pre>
-
-<p>Se instalaron dos archivos y tres carpetas:</p>
-
-<ul>
-<li><code>contracts/</code>: Contiene los archivos fuente de los smart contracts en lenguaje <code>Solidity</code>.</li>
-<li><code>migrations/</code>: Truffle utiiza un sistema de migración para gestionar el despliegue de smart contracts.  Migration es un smart contract especial que monitorea cambios.</li>
-<li><code>test/</code>: Aquí se almacenan las pruebas de nuestros contratos en JavaScript y Solidity.</li>
-<li><code>truffle.js</code>: Es el archivo de configuración de Truffle.</li>
-</ul>
-
-<p>El archivo de configuración se debe modificar para indicar en qué red se van a hacer las pruebas (se permiten distinas redes, como la local, una global llamada testnet y, desde luego, la de Ethereum).</p>
-
-<p>Con un editor de textos abra el archivo <code>truffle.js</code> y sustituya su contenido por el siguiente (<em>suponemos que testrpc se ejecutó en el puerto por omisión, el 8545</em>):</p>
-
-<pre><code class="java">module.exports = {
-  networks: {
-    development: {
-      host: <span class="string">"127.0.0.1"</span>,
-      port: <span class="number">8545</span>,
-      network_id: <span class="string">"*"</span> <span class="comment">// Match any network id</span>
-    }
-  }
-};
-</code></pre>
-
-<p><strong>4.2.2.-</strong> Interacción desde la consola de Truffle</p>
-
-<p>Lance <code>truffle console</code> en el directorio que tiene el archivo <code>truffle.js</code>.</p>
-
-<pre><code class="bash">PS&gt; truffle console
-truffle(development)&gt;
-</code></pre>
-
-<p>Para irnos familiarizando con algunos aspectos del ambiente, consultemos el saldo de una cuenta:</p>
-
-<pre><code class="java">truffle(development)&gt; web<span class="number">3</span>.eth.getBalance(web<span class="number">3</span>.eth.accounts[<span class="number">0</span>])
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-</code></pre>
-
-<p>El resultado es un poco extraño. En primer lugar, web3 utiliza objetos tipo BigNumber para las variables numéricas.  Estos objetos se representan por un signo (1 = positivo), un exponente (e) y un coeficiente (c).  En segundo, el valor no está representado en Ether sino en <strong>wei</strong>, el valor más pequeño en Ethereum, que equivale a 1/10E18 Ether.</p>
-
-<p>Con el siguiente comando se pueden obtener los balances de las cuentas creadas por testrpc:</p>
-
-<pre><code class="java">truffle(development)&gt; web<span class="number">3</span>.eth.accounts.forEach(cuenta =&gt; {balance = web<span class="number">3</span>.eth.getBalance(cuenta) ; console.log(balance); })
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-
-truffle(development)&gt;
-</code></pre>
-
-<p>Para enviar transferencias de una cuenta a otra, usaremos la función <code>sendTransaction</code>, que es parte de la API de web3.js:</p>
-
-<pre><code class="java">truffle(development)&gt;De = web<span class="number">3</span>.eth.accounts[<span class="number">0</span>]
-<span class="string">'0xd08d700d5009bb27b5e945cfa3ca034eb470fab1'</span>
-truffle(development)&gt;Para = web<span class="number">3</span>.eth.accounts[<span class="number">1</span>]
-<span class="string">'0x099642d1c7d34cf185b697d0afa6bb1c36b78b32'</span>
-
-truffle(development)&gt; operacion = { from: De, to: Para, value: <span class="number">500000000000000</span> }
-
-{
- from: <span class="string">'0xd08d700d5009bb27b5e945cfa3ca034eb470fab1'</span>,
-  to: <span class="string">'0x099642d1c7d34cf185b697d0afa6bb1c36b78b32'</span>,
-  value: <span class="number">500000000000000</span> }
-truffle(development)&gt; operHash = web<span class="number">3</span>.eth.sendTransaction(operacion)
-<span class="string">'0xd78f3e0026a223809aeffbc264e3866c3a00221abed354da5676dc97b7c5050e'</span>
-</code></pre>
-
-<p>Se envían 5E14 wei de la cuenta 0 a la 1.  El último valor devuelto es el hash de la transacción. Lo podemos usar para obtener información sobre ésta:</p>
-
-<pre><code class="java">truffle(development)&gt; web<span class="number">3</span>.eth.getTransaction(operHash)
-{ hash: <span class="string">'0xd78f3e0026a223809aeffbc264e3866c3a00221abed354da5676dc97b7c5050e'</span>,
-  nonce: <span class="number">0</span>,
-  blockHash: <span class="string">'0x955c04da97f5de3cf4288cdad8253a099e1c0ba83c32e8ff528c4a49f9a48fcf'</span>,
-  blockNumber: <span class="number">6</span>,
-  transactionIndex: <span class="number">0</span>,
-  from: <span class="string">'0xd08d700d5009bb27b5e945cfa3ca034eb470fab1'</span>,
-  to: <span class="string">'0x099642d1c7d34cf185b697d0afa6bb1c36b78b32'</span>,
-  value: BigNumber { s: <span class="number">1</span>, e: <span class="number">14</span>, c: [ <span class="number">5</span> ] },
-  gas: <span class="number">90000</span>,
-  gasPrice: BigNumber { s: <span class="number">1</span>, e: <span class="number">0</span>, c: [ <span class="number">1</span> ] },
-  input: <span class="string">'0x0'</span> }
-truffle(development)&gt;
-</code></pre>
-
-<p>Se pueden gastar hasta 90,000 unidades de <em>gas</em> para esta transacción y el precio de la unidad es de 1 wei.</p>
-
-<p>Verifiquemos que la transacción efectivamente tuvo lugar:</p>
-
-<pre><code class="java">truffle(development)&gt; web<span class="number">3</span>.eth.accounts.forEach(cuenta =&gt; { balance = web<span class="number">3</span>.eth.getBalance(cuenta) ; console.log(balance); })
-BigNumber { s: <span class="number">1</span>, e: <span class="number">19</span>, c: [ <span class="number">999994</span>, <span class="number">99999999979000</span>] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000005</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-BigNumber { s: <span class="number">1</span>, e: <span class="number">20</span>, c: [ <span class="number">1000000</span> ] }
-...
-</code></pre>
-
-<p>Vemos que la cuenta 1 efectivamente recibió 5 Ether, pero la cuenta 0 se decrementó un poco más que eso. La diferencia es precisamente el <code>gas</code> gastado en la transacción: 21,000 unidades, como puede comprobarlo en la ventana en la que se está ejecutando <code>testrpc</code>.</p>
-
-<p><em>Para terminar esta sección, siéntase en libertad de practicar haciendo transferencias entre otras cuentas.</em> </p>
-
-<p>** ==================================================**
-<strong>¿Qué pasa si el monto a transferir es mayor al saldo de una cuenta? ¿Si el origen y el destinatario son la misma cuenta?</strong>
-** ==================================================**</p>
-
-<p>AL TERMINAR, ABANDONE LA CONSOLA DE TRUFFLE CON EL COMANDO <code>.exit</code></p>
-
-<pre><code class="bash">truffle(development)&gt; .<span class="keyword">exit</span>
-PS&gt;
-</code></pre>
-
-<h3>5. Smart contracts</h3>
-
-<p>Vamos a escribir una aplicación <strong>notario digital</strong> que almacena el hash de un documento como prueba de su existencia y de su integridad.</p>
-
-<p><strong>5.1.-</strong> Smart contract. Primera versión.</p>
-
-<p>Nuestros ejemplos están lejos de tener la calidad de un smart contract en producción.  De hecho, este primer ejemplo ni siquiera será útil para almacenar más de un documento.</p>
-
-<p>Debemos crear un nuevo proyecto que se llamará ValidaDocs1:  </p>
-
-<pre><code class="bash"><span class="comment"># Si aún está dentro de la consola de Truffle, sálg</span>ase
-truffle(development)&gt; .<span class="keyword">exit</span>  ; observe el punto al inicio
-
-PS&gt;truffle create contract ValidaDocs1
-
-PS&gt; dir contracts
-
-    Directorio: D:\Cursos\TallerBlockChain\Ethereum\PruebasSolidity\contracts
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----       20/02/2018     11:58            515 Migrations.sol
--a----       20/02/2018     20:48            100 ValidaDocs1.sol
-
-
-</code></pre>
-
-<p>Ahora con su editor de textos favorito, por ejemplo <code>sublime</code>, abra el archivo <code>ValidaDocs1.sol</code> e insterte este código:</p>
-
-<pre><code class="java">pragma solidity ^<span class="number">0.4</span><span class="number">.4</span>;
-
-<span class="comment">// Contrato ValidaDocs, version 1</span>
-contract ValidaDocs<span class="number">1</span> {
-  <span class="comment">// estado</span>
-  bytes<span class="number">3</span><span class="number">2</span> <span class="keyword">public</span> hashDoc; <span class="comment">// El hash del documento</span>
-  uint<span class="number">2</span><span class="number">5</span><span class="number">6</span> accComision; <span class="comment">// Eventual acumulador de comisiones</span>
-  address <span class="keyword">public</span> creador;  <span class="comment">// Quién invocó el contra</span>to
-
-  // Constructor
-  function ValidaDocs<span class="number">1</span>() {
-    creador = msg.sender;
-    accComision = 0;
-  }
-
-  // Calcula y almacena el hash de un doc
-  // <span class="string">"función transaccional" 
-  function registra(string documento) {
-    hashDoc = hashPara(documento);
-  }
-
-  // función auxiliar. Calcula sha256
-  // solo lectura
-    function hashPara(string documento) constant returns (bytes32) {
-    return sha256(documento);
-  }
-}
-</code></pre>
-
-<p>Algunos puntos sobre el código:</p>
-
-<ul>
-<li>El <code>pragma</code> le indica al compilador que se requiere de una versión mayor o igual (<sup>)</sup> a la señalada (0.4.4).</li>
-<li><code>creador</code> almacenará la dirección de quien invocó el contrato. Como cada llamada a función es una transacción, el invocante es quien envió la transacción, que es <code>msg.sender</code>, como se observa en el constructor.</li>
-<li><code>hashDoc</code> almacenará el hash del documento. Como se calcula con sha256, esta variable es tipo <code>byte32</code>, es decir 32 bytes. <strong>Es una variable public y puede ser leída por cualquiera para verificar la existencia e integridad de un documento</strong>.</li>
-<li><code>accComisión</code> es un entero sin signo de 256 bits. Sería un acumulador donde se almacenan las comisiones cargadas por generar el hash.  En este tutorial se utiliza únicamente como un contador de las veces que se han invocado estas operaciones.</li>
-<li><code>Constructor</code> como en los lenguajes orientados a objetos, en Solidity el constructor tiene el mismo tipo que el smart contract (una clase) y se invoca cada vez que una nueva instancia del contrato se despliega en el bolckchain.  Además de registrar el dueño del contrato, en el constructor se inicia el acumulador de comisiones a cero.</li>
-<li><code>registra</code> es la función donde se guardará el hash del documento en <code>hashDoc</code>. Esta función es &quot;transaccional&quot; o no-constante pues cambia el estado de la red (genera una transacción) y su ejecución gasta <code>gas</code>.</li>
-<li><code>hashPara</code> es la función que invoca el cálculo del hash y lo devuelve. Esta función no cambia el estado de la cadena por lo que se considera de sólo lectura.  Como <em>cualquier nodo</em> puede calcular el hash, esta función no gasta <code>gas</code>.</li>
-</ul>
-
-<p><strong>5.2.-</strong> Despliegue del contrato</p>
-
-<p>Para desplegar el smart contract ValidaDocs1, en esta ocasión será necesario editar (o crear) el archivo de migración <code>migrations/2_deploy_contracts.js</code> para que Truffle despliegue el nuevo contrato con el siguiente contenido:</p>
-
-<pre><code class="java">var ValidaDocs<span class="number">1</span> = artifacts.require(<span class="string">"./ValidaDocs1.sol"</span>);
-module.exports = function(deployer) {
-  deployer.deploy(ValidaDocs<span class="number">1</span>);
-};
-</code></pre>
-
-<p>Vamos a enviar los smart contracts a la red. Esto se llama una migración; como vamos a hacer una nueva migración del ambiente que hemos estado utilizando (el creado con <code>truffle init</code>) debe utilizarse la bandera <code>reset</code>:</p>
-
-<pre><code class="java">PS&gt; truffle migrate --reset
-Using network <span class="string">'development'</span>.
-
-Running migration: <span class="number">1</span>_initial_migration.js
-  Deploying Migrations...
-
-    ...
-
-Running migration: <span class="number">2</span>_deploy_contracts.js
-  Deploying ValidaDocs<span class="number">1</span>...
-  ... 
-</code></pre>
-
-<p><strong>5.3.-</strong> Interactuando con el smart contract</p>
-
-<p>Con el contrato desplegado, podemos interactuar con él a través de la consola de Truffle como lo hicimos anteriormente.</p>
-
-<p>Empecemos por conocer la dirección del smart contract:</p>
-
-<pre><code class="java">PS&gt; truffle console
-PS&gt; truffle(development)&gt; var vd = ValidaDocs<span class="number">1</span>.at(ValidaDocs<span class="number">1</span>.address)
-undefined
-PS&gt; truffle(development)&gt; vd.address
-<span class="string">'0x57406d4a49469956b0492ce236bddc5afe7c703a'</span>
-</code></pre>
-
-<p>Ahora registremos un &quot;documento&quot; y verifiquemos que efectivamente su prueba se almacena y es correcta:</p>
-
-<pre><code class="java">truffle(development)&gt; vd.registra(<span class="string">'Un tutorial muy interesante'</span>)
-{ tx: <span class="string">'0x2a9c98bb747be867efeee9632638540e29b634e48f9f1a7aee8bdbe1ac36d34b'</span>,
-  receipt:
-   { transactionHash: <span class="string">'0x2a9c98bb747be867efeee9632638540e29b634e48f9f1a7aee8bdbe1ac36d34b'</span>,
-     transactionIndex: <span class="number">0</span>,
-     blockHash: <span class="string">'0xea89c5fb51a10b8cef826fe2bdab2a5f555367c877987159fa00ef0fe4902fa3'</span>,
-     blockNumber: <span class="number">9</span>,
-     gasUsed: <span class="number">45015</span>,
-     cumulativeGasUsed: <span class="number">45015</span>,
-     contractAddress: <span class="keyword">null</span>,
-     logs: [],
-     status: <span class="number">1</span> },
-  logs: [] }
-
-<span class="comment">// La prueba del documento es:</span>
-truffle(development)&gt; vd.hashPara(<span class="string">'Un tutorial muy interesante'</span>)
-<span class="string">'0x2dccd5bd331f2e122f33960b4d47c69b602ec0c2448a906c49592488733bfaee'</span>
-
-<span class="comment">// ... y lo que se almacenó en la memoria del contrato</span>:
-truffle(development)&gt; vd.hashDoc()
-<span class="string">'0x2dccd5bd331f2e122f33960b4d47c69b602ec0c2448a906c49592488733bfaee'</span>
-</code></pre>
-
-<p>Como se esperaba, el  hash almacenado y el calculado son iguales. Ese &quot;documento&quot; existe y no ha sido modificado.  <em>Observe que para acceder al valor de una variable Public, basta invocar una funcion con el mismo nombre. Estas funciones &quot;getter&quot; se crean automáticamente.</em></p>
-
-<p><strong>5.4.-</strong> Mejorando el contrato</p>
-
-<p>Como pudo observar el código anterior solo permite almacenar el hash de un documento a la vez.  Podemos usar una estructura <em>map</em> para asociar hashes que se van almacenando, a cierto o falso.</p>
-
-<p>La nueva variable tipo <code>map</code> se llamarà <code>hashesDocs</code> y será privada.  Para checar si un hash está o no registrado (es decir, si existe un documento y no ha sido alterado), tendremos que agregar una nueva función <code>checaDocumento()</code>. Aprovecharemos para agregar una línea que incremente en 1 el acumulador de comisiones cada vez que se registra un hash.</p>
-
-<p>El código final es el siguiente.  Edite <code>ValidaDocs1.sol</code>, haga las modificaciones que corresponda y guárdelo como <code>ValidaDocs2.sol</code>.</p>
-
-<pre><code class="java">pragma solidity ^<span class="number">0.4</span><span class="number">.4</span>;
-
-<span class="comment">// Contrato ValidaDocs, version 2</span>
-contract ValidaDocs<span class="number">2</span> {
-  <span class="comment">// estado</span>
-  mapping (bytes<span class="number">3</span><span class="number">2</span> =&gt;bool) <span class="keyword">private</span> hashesDocs; <span class="comment">// hashes -&gt; true/false</span>
-
-  uint<span class="number">2</span><span class="number">5</span><span class="number">6</span> <span class="keyword">public</span> accComision; <span class="comment">// Eventual acumulador de comisiones</span>
-  address <span class="keyword">public</span> creador;  <span class="comment">// Quien invocó el contrat</span>o
-
-  // Constructor
-  function ValidaDocs<span class="number">2</span>() {
-    creador = msg.sender;
-    accComision = <span class="number">0</span>;
-  }
-
-  // Calcula y almacena el hash de un doc
-  // <span class="string">"función transaccional"
-  function registra(string documento) {
-    var hash = hashPara(documento);
-    guardaHash(hash);
-
-    accComision += 1;
-  }
-
-  // Guarda el hash de un documento en el mapa y asigna true
-  function guardaHash(bytes32 h) {
-    hashesDocs[h] = true;
-  }
-
-  // función auxiliar. Calcula sha256
-  // "solo lectura"
-  function hashPara(string documento) constant returns (bytes32) {
-    return sha256(documento);
-  }
-
-  // Checa si un documento ha sido registrado
-  function checaDocumento(string doc) constant returns (bool) {
-    var h = hashPara(doc);
-      return estaHash(h);
-  }
-
-  //Devuelve true si está el hash
-  function estaHash(bytes32 h) constant returns (bool) {
-    return hashesDocs[h];
-  }
-}
-</code></pre>
-
-<p><strong>Recuerde que para desplegar el nuevo contrato deberá:</strong></p>
-
-<ul>
-<li>Salir de la consola de Truffle (<code>.exit</code>)</li>
-<li>Modificar el archivo <code>migrations/2_deploy_contracts.js</code> (ValidaDocs2)</li>
-<li>Compilar el código (<code>truffle compile</code>)</li>
-<li>Migrar con bandera de reset (<code>truffle migrate --reset</code>)</li>
-</ul>
-
-<p><strong>Despliegue el nuevo contrato y juegue con él.  Verifique que se puede guardar más de un hash y que el accComisión funciona como se espera.</strong></p>
-
-<pre><code class="java">PS&gt; truffle console
-truffle(development)&gt; var vd = ValidaDocs<span class="number">2</span>.at(ValidaDocs<span class="number">2</span>.address)
-
-truffle(development)&gt; vd.address
-<span class="string">'0x2f72dd8f793c27f8c1f66eb7bfebb86ea909da5c'</span>
-truffle(development)&gt; vd.checaDocumento(<span class="string">'hola'</span>)
-<span class="keyword">false</span>
-truffle(development)&gt; vd.registra(<span class="string">'hola'</span>)
-{ tx: <span class="string">'0x06f55cd0b79fecb12d6899cdb81571c3e483ea477e0bc296430155a069397ec4'</span>,
- ...
-  logs: [] }
-
-truffle(development)&gt; vd.checaDocumento(<span class="string">'hola'</span>)
-<span class="keyword">true</span>
-
-truffle(development)&gt; vd.registra(<span class="string">'otro'</span>)
-{ tx: 
-...
-  logs: [],
-     status: <span class="number">1</span> },
-  logs: [] }
-
-truffle(development)&gt; vd.checaDocumento(<span class="string">'otro'</span>)
-<span class="keyword">true</span>
-
-truffle(development)&gt;.exit
-PS&gt;
-</code></pre>
-
-<h2>6. Tutorial del Pet shop</h2>
-
-<p>En esta sección, adaptada de <a href="http://truffleframework.com/tutorials/pet-shop">http://truffleframework.com/tutorials/pet-shop</a>, aprenderemos a:</p>
-
-<ol>
-<li>Crear un proyecto de los disponibles como <em>Truffle Box</em></li>
-<li>Crear una interfaz de usuario (el <em>front end</em>) para interactuar con el smart contract.</li>
-</ol>
-
-<h4>6.1 Contexto</h4>
-
-<p>Pete Scandlon, propietario de <em>Pete&#39;s Pet Shop</em> está interesado en utilizar Ethereum para administrar la adopción de mascotas. La tienda tiene capacidad de albergar hasta 16 mascotas y ya cuenta con una base de datos de mascotas. Como prueba de concepto, Pete quisiera tener una <em>DApp</em> que asocie una dirección Ethereum con la mascota a adoptar.</p>
-
-<p>El proyecto ya integra la estructura del sitio web para interactuar con la DApp.  Nuestra tarea es escribir el <em>smart contract</em> y la lógica del front end.</p>
-
-<h4>6.2 Creación de un proyecto utilizando un <em>Truffle Box</em></h4>
-
-<p>Primero creamos un directorio en la carpeta de nuestra elección y nos posicionamos en ella.</p>
-
-<pre><code class="bash">PS&gt; mkdir pet-shop-tutorial
-PS&gt; cd pet-shop-tutorial
-</code></pre>
-
-<p>Se ha creado una <a href="truffleframework.com/boxes">Truffle Box</a> especial para este tutorial llamada <code>pet-shop</code> que incluye la estructura del proyecto y el código para la interfaz de usuario.  Desempaque la caja:</p>
-
-<pre><code class="bash">$ truffle unbox pet-shop
-Downloading...
-Unpacking...
-Setting up...
-</code></pre>
-
-<h4>6.3 Escribir el smart contract</h4>
-
-<p>Empezamos a codificar nuestra DApp escribiendo el smart contract que implementará la lógica del back-end y servirá como almacenamiento.</p>
-
-<p><strong>6.3.1.-</strong> Cree un nuevo archivo llamado <code>Adoption.sol</code> en el directorio <code>contracts\</code>. y agregue el siguiente contenido al archivo:</p>
-
-<pre><code class="java">pragma solidity ^<span class="number">0.4</span><span class="number">.4</span>;
-
-<span class="comment">// Contrato Adoption, version 1</span>
-contract Adoption {
-   address[<span class="number">16</span>] <span class="keyword">public</span> adopters;  <span class="comment">// Direcciones de los que van a adoptar</span>
-
-  uint<span class="number">2</span><span class="number">5</span><span class="number">6</span> <span class="keyword">public</span> accComision; <span class="comment">// Eventual acumulador de comisiones</span>
-  address <span class="keyword">public</span> creador;  <span class="comment">// Quien invocó el contrat</span>o
-
-  // Para adoptar una mascota. Recibe qué mascota quiere
-  // devuelve lo mismo sólo para saber que ok
-  function adopt(uint petId) public returns (uint) {
-    require(petId &gt;= <span class="number">0</span> &amp;&amp; petId &lt;=<span class="number">1</span>5);
-    adopters[petId] = msg.sender;
-    <span class="keyword">return</span> petId;
-  }
-
-  // Obten todo el arreglo de adopters
-  // getters proporcionados solo devuelven un valor
-  function getAdopters() <span class="keyword">public</span> view returns(address[<span class="number">1</span>6]) {
-    <span class="keyword">return</span> adopters;  
-  }
-}
-</code></pre>
-
-<ul>
-<li><p>La variable <code>adopters</code> es un arreglo de 16 direcciones Ethereum. Es una variable <strong>Public</strong>, lo que significa que <strong>se generan métodos <em>get</em> para obtener el valor de la variable, automáticamente</strong>.  Sin embargo, para los arreglos se requiere de una llave (un índice) y se devuelve un solo valor.  Más adelante escribiremos una función para devolver todo el arreglo.</p></li>
-<li><p><code>adopt</code> permite que los usuarios soliciten una adpoción. La función verifica que el argumento esté dentro del rango [0:15]. Los arreglos se indexan a partir del cero. Si el argumento del comando <code>require()</code> es falso, se suspende el contrato y se hace un roll back, pero sí se cobra el valor en <em>gas</em> por la ejecución del contrato.</p></li>
-</ul>
-
-<p>Si el argumento está dentro del rango, se agrega la dirección de quien hizo la llamada a la función. Recuerde que la dirección de quien invoca a la función se encuentra en msg.sender. Como confirmación de que la función se ejecutó correctamente, se devuelve el argumento. </p>
-
-<p><strong>6.3.2.</strong> Compilación y migración del  smart contract</p>
-
-<p>El contrato está listo. Ahora hay que compilarlo, verificar que no tiene errores y migrarlo.</p>
-
-<pre><code class="bash">$ truffle compile
-
-Compiling ./contracts/Migrations.sol...
-Compiling ./contracts/Adoption.sol...
-Writing artifacts to ./build/contracts
-</code></pre>
-
-<p>Vamos a crear nuestro script de migración en el archivo <code>2_deploy_contracts.js</code> en el directorio <code>migrations/</code>.  Cree el archivo y agregue el siguiente código:</p>
-
-<pre><code class="java">var Adoption = artifacts.require(<span class="string">"Adoption"</span>);
-
-module.exports = function(deployer) {
-  deployer.deploy(Adoption);
-};
-</code></pre>
-
-<p><em>El box de pet shop supone que utilizaremos Ganache (otro blockchain para pruebas con interfaz gráfica) en vez de testrpc. Por omisión Ganache escucha en el puerto 7545</em>. <strong>Cambie el puerto en el archivo <code>truffle.ps</code> a 8545</strong></p>
-
-<p>Ahora lanzamos el comando para migrar los contratos:</p>
-
-<pre><code class="bash">$ truffle migrate
-
-Using network <span class="string">'development'</span>.
-
-Running migration: 1_initial_migration.js
-  Deploying Migrations...
-  ... 0x49446f8832f38ead028e7371364953b1650e420c5b2900ad2711463eefea4b5b
-  Migrations: 0xd23f5ca2521af27b3ad579febd92b2310f71baac
-Saving successful migration to network
-...
-</code></pre>
-
-<p>Ahora que hemos escrito nuestro primer smart contract y lo desplegamos en un blockchain, es momento de interactuar a través de un front-end.</p>
-
-<h4>6.4 Interfaz de usuario</h4>
-
-<p>En vez de interactuar con nuestro smart conract via la terminal, lo haremos a través de una interfaz de usuario más amigable que ya ha sido programada y se encuentra dentro del proyecto <code>pet-shop</code>.</p>
-
-<p>En la carpeta <code>src/</code> se encuentra el código del front-end.  Es un código muy sencillo que ya tiene la estructura necesaria para la App; simplemente agregaremos las funciones específicas a Ethereum. </p>
-
-<p><strong>6.4.1</strong> Instanciar web3</p>
-
-<p>Ya hemos comentado que <em>web3 es una API de Ethereum compatible con JavaScript que implementa la especificación genérica JSON RPC.</em></p>
-
-<p>Abra el archivo <code>/src/js/app.js</code> en un editor de texto y examine el archivo.  Encontrará un objeto global <code>App</code> para administrar la aplicación.  En <code>init()</code> carga los datos de las mascotas en formato json desde el archivo <code>pets.json</code> alojado en el directorio anterior. </p>
-
-<p>Después llama la función <code>intiWeb3()</code>. La librería web3 puede recuperar cuentas de usuarios, enviar transacciones e interactuar con smart contracts, entre otros.</p>
-
-<p>Sustituya el  comentario multi-línea en <code>initweb3</code> por el siguiente código:</p>
-
-<pre><code class="java"><span class="comment">// Is there an injected web3 instance?</span>
-<span class="keyword">if</span> (typeof web<span class="number">3</span> !== <span class="string">'undefined'</span>) {
-  App.web<span class="number">3</span>Provider = web<span class="number">3</span>.currentProvider;
-} <span class="keyword">else</span> {
-  <span class="comment">// If no injected web3 instance is detected, fall back to Ganache</span>
-  App.web<span class="number">3</span>Provider = <span class="keyword">new</span> Web<span class="number">3</span>.providers.HttpProvider(<span class="string">'http://localhost:8545'</span>);
-}
-web<span class="number">3</span> = <span class="keyword">new</span> Web<span class="number">3</span>(App.web<span class="number">3</span>Provider);
-</code></pre>
-
-<p>Este código primero revisa si no hay ya una instancia de web3 ejecutándose (algunos navegadores de Ethereum como Mist o MetaMask/Chrome crean sus propias instancias de web3).  De ser así, se toma; de lo contrario, se crea una en localhost en el puerto 8545.  En ambos casos, se crea el objeto <code>web3</code>.</p>
-
-<p><strong>6.4.2</strong> Instanciar el contrato</p>
-
-<p>Ya se puede interactuar con Ethereum a través de web3; ahora es necesario instanciar el smart contract para que web3 sepa dónde encontrarlo y cómo trabaja. Para ello, se utiliza la librería <code>contract</code> de Truffle.  Esta librería mantiene información sobre el contrato en sincronía con las migraciones para no tener que cambiar manualmente las direcciones de los contratos desplegados.</p>
-
-<p>Sustituya el comentario multi-línea en <code>initContract</code> por el siguiente código:</p>
-
-<pre><code class="java">$.getJSON(<span class="string">'Adoption.json'</span>, function(data) {
-  <span class="comment">// Get the necessary contract artifact file and instantiate it with truffle-contract</span>
-  var AdoptionArtifact = data;
-  App.contracts.Adoption = TruffleContract(AdoptionArtifact);
-
-  <span class="comment">// Set the provider for our contract</span>
-  App.contracts.Adoption.setProvider(App.web<span class="number">3</span>Provider);
-
-  <span class="comment">// Use our contract to retrieve and mark the adopted pets</span>
-  <span class="keyword">return</span> App.markAdopted();
-});
-</code></pre>
-
-<p>Esta función toma el archivo de Artefactos de nuestro smart contract. <em>Artefactos se refiere a información del contrato como su dirección al ser desplegado, y la interfaz de aplicación binaria ABI.  Esta interfaz en un objeto JavaScript que define cómo interactuar con el contrato, incluyendo sus variables, funciones y parámetros</em>.</p>
-
-<p>Una vez recuperados los Artefactos, éstos se pasan a <code>TruffleContract()</code>, con lo que <strong>se crea una instancia del contrato con la que se puede interactuar.</strong></p>
-
-<p>Se asigna el proveedor web3 al contrato instanciado con el valor almacenado al configurar web3.  Finalmente se llama a la función <code>markAdopted()</code> de la App en caso de que algunas mascotas ya hayan sido adoptadas de una visita previa.  Esto se encapsula en una función por separado ya que necesitaremos actualizar la UI cada vez que se haga un cambio a los datos del smart contract.</p>
-
-<p><strong>6.4.3</strong> Actualización de la UI con las mascotas adoptadas</p>
-
-<p>Todavía dentro de <code>/src/js/app.js</code>, sustituya el comentario multi-línea en <code>markAdopted</code> por el siguiente código:</p>
-
-<pre><code class="java">var adoptionInstance;
-
-App.contracts.Adoption.deployed().then(function(instance) {
-  adoptionInstance = instance;
-
-  <span class="keyword">return</span> adoptionInstance.getAdopters.call();
-}).then(function(adopters) {
-  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; adopters.length; i++) {
-    <span class="keyword">if</span> (adopters[i] !== <span class="string">'0x0000000000000000000000000000000000000000'</span>) {
-      $(<span class="string">'.panel-pet'</span>).eq(i).find(<span class="string">'button'</span>).text(<span class="string">'Success'</span>).attr(<span class="string">'disabled'</span>, <span class="keyword">true</span>);
-    }
-  }
-}).<span class="keyword">catch</span>(function(err) {
-  console.log(err.message);
-});
-</code></pre>
-
-<p>Se accede al contrato desplegado <code>Adoption</code>  y se llama a la fucion <code>getAdopters()</code>. La variable <code>adoptionInstance</code> fuera de las llamadas al smart contract, permite acceder la instancia después de haberla recuperado.</p>
-
-<p><strong>El usar <code>call()</code> nos permite leer datos de blockchain sin tener que mandar una transacción completa</strong>. Por supuesto, tampoco debemos gastar <code>gas</code>.</p>
-
-<p>Tras llamar a <code>getAdopters</code>, se hace un ciclo con todos ellos verificando si hay una dirección almacenada para cada una de las mascotas. Dado que el arreglo contiene tipos <em>address</em>, Ethereum inicializa el arreglo con 16 entradas vacías.  Así es como se checa una dirección vacía, en vez de comparar con NULL o algún otro valor confuso.</p>
-
-<p>Si se ha hallado un identificador de mascota con una dirección no vacía, se deshabilita su botón de <em>Adopt</em> y se cambia el texto a <em>Success</em> para que el usuario sepa que esa mascota ya fue adoptada.</p>
-
-<p>Finalmente, si hay errores, éstos se envían a la consola.</p>
-
-<p><strong>6.4.4</strong> Manejando la función <code>adopt()</code>
-Sustituya el  comentario multi-línea en <code>handleAdopt</code> por el siguiente código:</p>
-
-<pre><code class="java">var adoptionInstance;
-
-web<span class="number">3</span>.eth.getAccounts(function(error, accounts) {
-  <span class="keyword">if</span> (error) {
-    console.log(error);
-  }
-
-  var account = accounts[<span class="number">0</span>];
-
-  App.contracts.Adoption.deployed().then(function(instance) {
-    adoptionInstance = instance;
-
-    <span class="comment">// Execute adopt as a transaction by sending account</span>
-    <span class="keyword">return</span> adoptionInstance.adopt(petId, {from: account});
-  }).then(function(result) {
-    <span class="keyword">return</span> App.markAdopted();
-  }).<span class="keyword">catch</span>(function(err) {
-    console.log(err.message);
-  });
-});
-</code></pre>
-
-<p>Con <code>web3</code> se accede a las cuentas de usuario y se selecciona la primera cuenta. Posteriormente se toma el contrato desplegado y su instancia se almacena en <code>adoptionInstance</code>. </p>
-
-<p>En esta ocasión se emviará una <strong>transacción</strong> en vez de un <strong>call</strong>, por lo que se gastará <code>gas</code>.  La transacción requiere de una dirección <em>from</em>. La transacción se envía al ejecutar la función <code>adopt()</code> con el ID de la mascota y la dirección de la cuenta.</p>
-
-<p>El resultado debe enviar la transacción es el &quot;transaction object&quot;.  Si no hay errores, continuamos con la llamada a <code>markAdopted()</code> para sincronizar la interfaz de usuario con los nuevos datos almacenados.</p>
-
-<h4>6.5 Interactuando con la DApp a través de un navegador</h4>
-
-<p>¡Por fin estamos listos para usar la Dapp!  Pero necesitamos un navegador.  La manera más sencilla de obtenerlo, es a través de la extensión <code>MetaMask</code> para Chrome y Firefox.</p>
-
-<p><strong>6.5.1.</strong> En un navegador Chrome (o Firefox), instale la extensión <code>MetaMask</code>. Una vez instalado, verá el ícono de un zorro arriba a la derecha, junto a la barra de direcciones URL.  De clic y aparecerá una pantalla con indicaciones de privacidad:</p>
-
-<p><img src="../imagenes/eth/metamask-privacy.png" alt="Imagen: Pantalla de privacidad MetaMask">
-<em>Fig. 3. Pantalla de privacidad MetaMask</em></p>
-
-<p><strong>6.5.2.</strong> De clic para aceptar el mensaje de privacidad.  Ahora aparece la pantalla de términos de uso. Si puede léalos; de scroll hasta el final y de clic para aceptarlos.</p>
-
-<p><strong>6.5.3.</strong> Ahora encontrará la pantalla inicial de MetaMask. De clic en <em>Import Existing DEN</em> </p>
-
-<p><img src="../imagenes/eth/metamask-initial.png" alt="Imagen: Pantalla de inicio MetaMask"> 
-<em>Fig. 4. Pantalla de inicio MetaMask</em></p>
-
-<p><strong>6.5.4.</strong> En la caja llamada <strong>Wallet Seed</strong> introduzca el mnemónico desplegado en <strong>testrpc, Fig.2</strong>, elija una contraseña, reescríbala y de clic en <em>OK</em>. Si no puede ver el mnemónico, simplemnte detenga y lance de nuevo <code>testrpc</code>.</p>
-
-<pre><code class="bash"> wear hire imitate boat staff gloom gaze supreme name brief gorilla attend
-</code></pre>
-
-<p><img src="../imagenes/eth/metamask-seed.png" alt="Imagen: Pantalla para entrar con la frase semilla a MetaMask">
-<em>Fig. 5. Pantalla  para entrar con la frase semilla a MetaMask</em></p>
-
-<p><strong>6.5.5.</strong> Se debe conectar MetaMask al blockchain creado por Ganache. De clic en el menú que muestra <em>MainNetwork</em> y seleccione <strong>Custom RPC</strong>.</p>
-
-<p><img src="../imagenes/eth/metamask-networkmenu.png" alt="Imagen: Pantalla de menú de red MetaMask">
-<em>Fig. 6. Pantalla de menú de red MetaMask</em></p>
-
-<p><strong>6.5.6.</strong> En la pantalla que aparece con la leyenda <em>New RPC URL</em> inserte <code>http://127.0.0.1:8545</code>y de clic en <em>Save</em></p>
-
-<p>El nombre de la red aparecerá arriba como <em>Private Network</em></p>
-
-<p><strong>6.5.7:</strong> De clic en la flecha que apunta hacia la izquierda para regresar a la página de las cuentas.</p>
-
-<p>Cada cuenta creada por testrpc recibe 100 ether.  Observará que en la cuenta desplegada hay una cantidad un poco menor.  La diferencia es el <code>gas</code> utilizado para desplegar el contrato y en las pruebas que se hicieron.</p>
-
-<p><img src="../imagenes/eth/metamask-account1.png" alt="Imagen: Pantalla para entrar con la frase semilla a MetaMask">
-<em>Fig. 7. Pantalla para entrar con la frase semilla a MetaMask</em></p>
-
-<h4>6.6. Instalar y configurar <em>lite-server</em></h4>
-
-<p>Ahora podemos arrancar un servidor web local para usar la DApp.  La librería <code>lite-server</code> viene con el paquete del tutorial <code>pet-shop</code> y es suficiente para mosttrar los archivos estáticos que se utilizarán.  Veamos cómo funciona.</p>
-
-<p>Abra el archivo <code>bs-config.json</code> que se encuentra en el directorio raíz del proyecto, con un editor de textos y examine su contenido:</p>
-
-<pre><code class="java">{
-  <span class="string">"server"</span>: {
-    <span class="string">"baseDir"</span>: [<span class="string">"./src"</span>, <span class="string">"./build/contracts"</span>]
-  }
-}
-</code></pre>
-
-<p>Se está indicando a <code>lite-sever</code>qué archivos incluir en nuestro directorio base: <code>/src</code> para los archivos del sitio web y <code>./build/contracts/</code> para los artefactos del contrato.</p>
-
-<p>En el archivo <code>package.json</code>también se ha agregado un comando <code>dev</code> al objeto <code>scripts</code>.  Este objeto permite <em>apodar</em> comandos de la consola en un solo comando <em>npm</em>.  En este caso se está incluyendo un solo comando pero es posible tener configuraciones más complejas. </p>
-
-<p>Al ejecutar <code>npm run dev</code> se correrá la instalación local de <code>lite-server</code>:</p>
-
-<pre><code class="java"><span class="string">"scripts"</span>: {
-  <span class="string">"dev"</span>: <span class="string">"lite-server"</span>,
-  <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
-},
-</code></pre>
-
-<h4>6.7. Uso de la dapp</h4>
-
-<p><strong>Asegúrese de que el navegador en donde tiene las extensiones <code>MetaMask</code> es el navegador por omisión</strong></p>
-
-<p>Ejecute el comando <code>npm run dev</code> y se lanzará una nueva pestaña en el navegador conteniendo la vista de la aplicación:</p>
-
-<p><img src="../imagenes/eth/dapp.png" alt="Imagen: Pantalla de la tienda de mascotas">
-<em>Fig. 8. Pantalla de la tienda de mascotas</em> </p>
-
-<p>De clic en el botón <code>Adopt</code> de alguna mascota.  Automáticamente MetaMask le solicitará aprobar la transacción.  De clic en <strong>Submit</strong> para aprobarla.</p>
-
-<p><img src="../imagenes/eth/metamask-transactionconfirm.png" alt="Imagen: Pantalla para aprobar la transacción">
-<em>Fig. 9. Pantalla para aprobar la transacción</em> </p>
-
-<p>Tal como se programó, verá cómo cambia el botón a <em>Success</em> y queda deshabilitado.</p>
-
-<p><img src="../imagenes/eth/dapp-success.png" alt="Imagen: Pantalla mostrando que la adopción tuvo lugar">
-<em>Fig. 10. Pantalla para aprobar la transacción</em> </p>
-
-<p>Tanto en MetaMask como en Ganache (menu <em>Transactions</em>) podrá ver listada la transacción.</p>
-
-<h1>Apéndice. Instalación de las herramientas</h1>
-
-<h3>Instalación en Windows 7</h3>
-
-<p>La guía de instalación está tomada de <a href="http://truffleframework.com/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development">aquí</a>.</p>
-
-<p><strong>1.-</strong> Instalar <a href="https://chocolatey.org/"><code>Chocolatey</code></a>  </p>
-
-<ul>
-<li>Lanzar una ventana de PowerShell con permisos de administrador (clic botón derecho, Ejecutar como Administrador).</li>
-<li>Ejecute el comando <code>Get-ExecutionPolicy</code>. Si devuelve <code>Restricted</code>, ejecute <code>Set-ExecutionPolicy AllSigned</code> o <code>Set-ExecutionPolicy Bypass -Scope Process</code>.</li>
-</ul>
-
-<p><img src="../imagenes/eth/cambia-policy.jpg" alt="imagen:Política PowerShell">
-<em>Fig. A1. Cambio de política de ejecución en PowerShell</em></p>
-
-<ul>
-<li>Ejecute el siguiente comando para instalar <code>chocolatey</code>:</li>
-</ul>
-
-<pre><code class="bash">PS&gt; Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))
-</code></pre>
-
-<p><strong>2.-</strong> Instalar las herramientas <code>npm</code> y <code>git</code> a través de <code>chocolatey</code>. 
-Desde la misma consola de PowerShell con permisos de administrador, ejecutar los siguientes comandos:</p>
-
-<pre><code class="bash">PS&gt; choco install nodejs.install –y ; Va a tomar algo de tiempo
-PS&gt; choco install git –y
-PS&gt; choco install VisualStudioCode -y ; Esto es opcional
-</code></pre>
-
-<p><img src="../imagenes/eth/instala-npm.jpg" alt="imagen:Instalacion npm">
-<em>Fig. A2. Instalación de npm y de git</em></p>
-
-<p><strong>3.-</strong> Instalar las herramientas con <code>npm</code>:
-Abrir una ventana <strong>NUEVA</strong> de  <code>PowerShell</code> con permisos de administrador para asegurar que la instalación anterior se recargó, y ejecutar los siguientes comandos:</p>
-
-<pre><code class="bash">PS&gt; npm install -g npm
-PS&gt; npm install -g -production windows-build-tools
-PS&gt; npm install -g ethereumjs-testrpc
-PS&gt; npm install -g truffle
-</code></pre>
-
-<p><img src="../imagenes/eth/instala-testrpc.jpg" alt="imagen:Instalacion testrpc">
-<em>Fig. A3. Instalación de testrpc y truffle</em></p>
-
-<p>Las instalaciones anteriores pueden marcar unos errores; la mayoría son mensajes informativos o componentes no críticos.  Podemos probar si la instalación se efectuó correctamente ejecutando los comandos <code>truffle</code> y <code>testrpc</code>. </p>
-
-<h4>Instalación en Windows 10 con GitBash</h4>
-
-<p><strong>En Windows 10 se puede trabajar con <code>ganache-cli</code>, la versión actualizada de <code>testrpc</code></strong>.</p>
-
-<h5>Opción 1 (La mejor): Instalación desde cero, sin un node</h5>
-
-<pre><code class="bash"><span class="comment"># (opcional) Asegúrese de que Ubuntu está actualiza</span><span class="keyword">do</span>
-$ sudo apt-get update -y &amp;&amp; sudo apt-get upgrade -y
-
-# instalar nvm
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
-
-# reiniciar bash para habilitar nvm
-$ exec bash
-
-# instalar node y los paquetes npm
-$ nvm install node
-$ npm install -g truffle ganache-cli
-
-<span class="comment">##### Opción 2: Instalación en un equipo que ya tiene</span> nvm
-Se debe tener la versión 8 o superior de node y la 5.3.0 o superior de npm.  Esto se checa con `node -v`, `npm -v`
-
-```bash
-# Actualice node a la última versión e instale las herramientas 
-$ nvm install node
-$ npm install -g truffle ganache-cli
-</code></pre>
-
-</body>
-</html>
