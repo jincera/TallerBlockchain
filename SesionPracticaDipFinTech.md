@@ -104,5 +104,5 @@ A la derecha se observa un resumen de las transacciones y los fondos que aún qu
 
  
 
-![img](figuras/clip_image010.jpg)
+![img](https://imgur.com/Ws73YaQ)
 
