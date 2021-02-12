@@ -6,7 +6,7 @@
 
 #### 1. Cifrado
 
-Vamos a utilizar la herramientaque se encuentra en la página [https://www.cryptool.org/en/cto-ciphers](https://www.cryptool.org/en/cto-ciphers).
+Vamos a utilizar la herramientaque se encuentra en la página [https://www.cryptool.org/en/cto](https://www.cryptool.org/en/cto).
 
 En la pestaña **Ciphers**, seleccione `Caesar`. 
 
